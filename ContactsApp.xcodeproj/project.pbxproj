@@ -16,6 +16,10 @@
 		BFC3DB7E2BB8946D0094FE0F /* ContactsAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC3DB7D2BB8946D0094FE0F /* ContactsAppTests.swift */; };
 		BFC3DB882BB8946D0094FE0F /* ContactsAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC3DB872BB8946D0094FE0F /* ContactsAppUITests.swift */; };
 		BFC3DB8A2BB8946D0094FE0F /* ContactsAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC3DB892BB8946D0094FE0F /* ContactsAppUITestsLaunchTests.swift */; };
+		BFC3DB992BB89C940094FE0F /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC3DB972BB89C940094FE0F /* ContactTableViewCell.swift */; };
+		BFC3DB9A2BB89C940094FE0F /* ContactTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFC3DB982BB89C940094FE0F /* ContactTableViewCell.xib */; };
+		BFC3DB9D2BB89EC10094FE0F /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC3DB9B2BB89EC10094FE0F /* ContactViewController.swift */; };
+		BFC3DB9E2BB89EC10094FE0F /* ContactViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFC3DB9C2BB89EC10094FE0F /* ContactViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,10 @@
 		BFC3DB832BB8946D0094FE0F /* ContactsAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ContactsAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFC3DB872BB8946D0094FE0F /* ContactsAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsAppUITests.swift; sourceTree = "<group>"; };
 		BFC3DB892BB8946D0094FE0F /* ContactsAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		BFC3DB972BB89C940094FE0F /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
+		BFC3DB982BB89C940094FE0F /* ContactTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactTableViewCell.xib; sourceTree = "<group>"; };
+		BFC3DB9B2BB89EC10094FE0F /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
+		BFC3DB9C2BB89EC10094FE0F /* ContactViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +114,10 @@
 				BFC3DB6F2BB8946D0094FE0F /* Assets.xcassets */,
 				BFC3DB712BB8946D0094FE0F /* LaunchScreen.storyboard */,
 				BFC3DB742BB8946D0094FE0F /* Info.plist */,
+				BFC3DB972BB89C940094FE0F /* ContactTableViewCell.swift */,
+				BFC3DB982BB89C940094FE0F /* ContactTableViewCell.xib */,
+				BFC3DB9B2BB89EC10094FE0F /* ContactViewController.swift */,
+				BFC3DB9C2BB89EC10094FE0F /* ContactViewController.xib */,
 			);
 			path = ContactsApp;
 			sourceTree = "<group>";
@@ -231,6 +243,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFC3DB9A2BB89C940094FE0F /* ContactTableViewCell.xib in Resources */,
+				BFC3DB9E2BB89EC10094FE0F /* ContactViewController.xib in Resources */,
 				BFC3DB702BB8946D0094FE0F /* Assets.xcassets in Resources */,
 				BFC3DB732BB8946D0094FE0F /* Base in Resources */,
 				BFC3DB6E2BB8946A0094FE0F /* Base in Resources */,
@@ -258,9 +272,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFC3DB992BB89C940094FE0F /* ContactTableViewCell.swift in Sources */,
 				BFC3DB6B2BB8946A0094FE0F /* ViewController.swift in Sources */,
 				BFC3DB672BB8946A0094FE0F /* AppDelegate.swift in Sources */,
 				BFC3DB692BB8946A0094FE0F /* SceneDelegate.swift in Sources */,
+				BFC3DB9D2BB89EC10094FE0F /* ContactViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
