@@ -9,13 +9,24 @@ import UIKit
 
 class ContactViewController: UIViewController {
 
+    @IBAction func phoneNumberPressed(_ sender: UIButton) {
+    }
+    
+    @IBOutlet weak var AALabel: UILabel!
+    @IBOutlet weak var phoneNumberBtn: UIButton!
     @IBOutlet weak var nameSurnameLabel: UILabel!
-    var nameSurnameLabelText = ""
+    
+    var nameLabelText = ""
+    var surnameLabelText = ""
+    var phoneNumber = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        nameSurnameLabel.text = nameSurnameLabelText
+        nameSurnameLabel.text = "\(nameLabelText) \(surnameLabelText)"
+        AALabel.text = "\(String(describing: nameLabelText[nameLabelText.startIndex]))\(String(describing: surnameLabelText[surnameLabelText.startIndex]))"
+        phoneNumberBtn.setTitle(phoneNumber, for: .normal)
     }
 
 

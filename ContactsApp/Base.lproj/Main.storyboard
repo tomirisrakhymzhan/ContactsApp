@@ -30,6 +30,9 @@
                                 </segments>
                                 <color key="tintColor" red="0.96862745100000003" green="0.25490196079999999" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="selectedSegmentTintColor" red="1" green="0.95294117649999999" blue="0.78039215689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="segmentControlValueChanged:" destination="mPA-IR-rS8" eventType="valueChanged" id="jt2-UB-WiF"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="jqc-Ey-g5t"/>
@@ -47,9 +50,13 @@
                     <navigationItem key="navigationItem" title="Contacts" id="eke-B5-2Ct">
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="1Ra-yu-cr9">
                             <color key="tintColor" red="0.96862745100000003" green="0.25490196079999999" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="addContactPressed:" destination="mPA-IR-rS8" id="gZb-Sc-M69"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="segmentControl" destination="Ir8-Qg-nNj" id="u3b-C7-oSS"/>
                         <outlet property="tableView" destination="8Ih-pc-6MM" id="nvK-kH-ZfZ"/>
                     </connections>
                 </viewController>

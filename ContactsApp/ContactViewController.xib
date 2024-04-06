@@ -9,7 +9,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ContactViewController" customModule="ContactsApp" customModuleProvider="target">
             <connections>
+                <outlet property="AALabel" destination="QdF-lQ-sGO" id="mM3-3y-Mt8"/>
                 <outlet property="nameSurnameLabel" destination="qdT-Pg-UpE" id="gnQ-bQ-bKT"/>
+                <outlet property="phoneNumberBtn" destination="b9q-Yl-0lF" id="Pwg-yZ-sZb"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -134,36 +136,40 @@
                         <constraint firstItem="sMS-8c-aQJ" firstAttribute="top" secondItem="chZ-LI-IPp" secondAttribute="top" id="qZn-up-Fvp"/>
                     </constraints>
                 </stackView>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="0nQ-Eh-JhL">
-                    <rect key="frame" x="16" y="358" width="361" height="165.33333333333337"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="0nQ-Eh-JhL" userLabel="Details Stack View">
+                    <rect key="frame" x="16" y="358" width="361" height="179.33333333333337"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="CqQ-ef-eqk">
-                            <rect key="frame" x="0.0" y="0.0" width="361" height="54.666666666666664"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="CqQ-ef-eqk" userLabel="PhoneNumber and Button Stack View">
+                            <rect key="frame" x="0.0" y="0.0" width="361" height="68.666666666666671"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="odb-EN-tKb">
-                                    <rect key="frame" x="0.0" y="0.0" width="118.66666666666667" height="20.333333333333332"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="118.66666666666667" height="34.333333333333336"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                     <color key="textColor" red="0.96862745100000003" green="0.25490196079999999" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b9q-Yl-0lF">
-                                    <rect key="frame" x="0.0" y="20.333333333333318" width="75" height="34.333333333333343"/>
+                                    <rect key="frame" x="0.0" y="34.333333333333314" width="75" height="34.333333333333343"/>
                                     <color key="tintColor" red="0.96862745100000003" green="0.25490196079999999" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                    <connections>
+                                        <action selector="phoneNumberPressed:" destination="-1" eventType="touchUpInside" id="aef-Fx-Os9"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" red="0.99607843139999996" green="0.78039215689999997" blue="0.70588235290000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="tintColor" red="0.96862745100000003" green="0.25490196079999999" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </stackView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RX0-F2-tTx">
-                            <rect key="frame" x="0.0" y="75.666666666666686" width="361" height="34.333333333333343"/>
+                            <rect key="frame" x="0.0" y="89.666666666666686" width="361" height="34.333333333333343"/>
                             <color key="backgroundColor" red="0.99607843139999996" green="0.78039215689999997" blue="0.70588235290000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <color key="tintColor" red="0.96862745100000003" green="0.25490196079999999" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" title="Undo delete"/>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iQ8-Nu-ki4">
-                            <rect key="frame" x="0.0" y="131" width="361" height="34.333333333333343"/>
+                            <rect key="frame" x="0.0" y="145" width="361" height="34.333333333333343"/>
                             <color key="backgroundColor" red="0.99607843139999996" green="0.78039215689999997" blue="0.70588235290000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <color key="tintColor" red="0.96862745100000003" green="0.25490196079999999" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <state key="normal" title="Button"/>
