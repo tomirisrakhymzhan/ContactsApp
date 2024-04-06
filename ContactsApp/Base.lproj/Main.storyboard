@@ -48,7 +48,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Contacts" id="eke-B5-2Ct">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="1Ra-yu-cr9">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="1Ra-yu-cr9">
                             <color key="tintColor" red="0.96862745100000003" green="0.25490196079999999" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <action selector="addContactPressed:" destination="mPA-IR-rS8" id="gZb-Sc-M69"/>

@@ -10,6 +10,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ContactViewController" customModule="ContactsApp" customModuleProvider="target">
             <connections>
                 <outlet property="AALabel" destination="QdF-lQ-sGO" id="mM3-3y-Mt8"/>
+                <outlet property="emailBtn" destination="cXF-CY-UDu" id="BPZ-Vi-P4j"/>
                 <outlet property="nameSurnameLabel" destination="qdT-Pg-UpE" id="gnQ-bQ-bKT"/>
                 <outlet property="phoneNumberBtn" destination="b9q-Yl-0lF" id="Pwg-yZ-sZb"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -62,12 +63,18 @@
                                     <color key="tintColor" red="0.96862745100000003" green="0.25490196079999999" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" image="message.fill" catalog="system"/>
+                                    <connections>
+                                        <action selector="smsButtonPressed:" destination="-1" eventType="touchUpInside" id="bW3-y6-JJY"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bha-ju-eP7">
                                     <rect key="frame" x="16.333333333333332" y="34.333333333333371" width="55.333333333333343" height="34.333333333333343"/>
                                     <color key="tintColor" red="0.96862745100000003" green="0.25490196079999999" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" title="sms"/>
+                                    <connections>
+                                        <action selector="smsButtonPressed:" destination="-1" eventType="touchUpInside" id="pZ5-W8-2gP"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" red="0.99607843139999996" green="0.78039215689999997" blue="0.70588235290000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -80,12 +87,18 @@
                                     <color key="tintColor" red="0.96862745100000003" green="0.25490196079999999" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" image="phone.fill" catalog="system"/>
+                                    <connections>
+                                        <action selector="callButtonPressed:" destination="-1" eventType="touchUpInside" id="49w-sq-22V"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n99-QY-Ojw">
                                     <rect key="frame" x="19" y="34.333333333333371" width="50" height="34.333333333333343"/>
                                     <color key="tintColor" red="0.96862745100000003" green="0.25490196079999999" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" title="call"/>
+                                    <connections>
+                                        <action selector="callButtonPressed:" destination="-1" eventType="touchUpInside" id="OWh-D6-DxU"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" red="0.99607843139999996" green="0.78039215689999997" blue="0.70588235290000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -98,12 +111,18 @@
                                     <color key="tintColor" red="0.96862745100000003" green="0.25490196079999999" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" image="video.fill" catalog="system"/>
+                                    <connections>
+                                        <action selector="videocallButtonPressed:" destination="-1" eventType="touchUpInside" id="MbA-lV-4Vg"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NsW-82-wvd">
                                     <rect key="frame" x="11.333333333333343" y="34.333333333333371" width="65.666666666666671" height="34.333333333333343"/>
                                     <color key="tintColor" red="0.96862745100000003" green="0.25490196079999999" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" title="video"/>
+                                    <connections>
+                                        <action selector="videocallButtonPressed:" destination="-1" eventType="touchUpInside" id="P8a-dL-rUa"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" red="0.99607843139999996" green="0.78039215689999997" blue="0.70588235290000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -116,12 +135,18 @@
                                     <color key="tintColor" red="0.96862745100000003" green="0.25490196079999999" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" image="envelope.fill" catalog="system"/>
+                                    <connections>
+                                        <action selector="emailButtonPressed:" destination="-1" eventType="touchUpInside" id="k5T-vn-MI0"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XuN-r2-YqA">
                                     <rect key="frame" x="16.666666666666686" y="34.333333333333371" width="55" height="34.333333333333343"/>
                                     <color key="tintColor" red="0.96862745100000003" green="0.25490196079999999" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" title="mail"/>
+                                    <connections>
+                                        <action selector="emailButtonPressed:" destination="-1" eventType="touchUpInside" id="1E2-La-f0a"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" red="0.99607843139999996" green="0.78039215689999997" blue="0.70588235290000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -137,10 +162,10 @@
                     </constraints>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="0nQ-Eh-JhL" userLabel="Details Stack View">
-                    <rect key="frame" x="16" y="358" width="361" height="179.33333333333337"/>
+                    <rect key="frame" x="16" y="358" width="361" height="269"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="CqQ-ef-eqk" userLabel="PhoneNumber and Button Stack View">
-                            <rect key="frame" x="0.0" y="0.0" width="361" height="68.666666666666671"/>
+                            <rect key="frame" x="0.0" y="0.0" width="361" height="103"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="odb-EN-tKb">
                                     <rect key="frame" x="0.0" y="0.0" width="118.66666666666667" height="34.333333333333336"/>
@@ -148,7 +173,7 @@
                                     <color key="textColor" red="0.96862745100000003" green="0.25490196079999999" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b9q-Yl-0lF">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b9q-Yl-0lF" userLabel="phone number button">
                                     <rect key="frame" x="0.0" y="34.333333333333314" width="75" height="34.333333333333343"/>
                                     <color key="tintColor" red="0.96862745100000003" green="0.25490196079999999" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <state key="normal" title="Button"/>
@@ -157,19 +182,35 @@
                                         <action selector="phoneNumberPressed:" destination="-1" eventType="touchUpInside" id="aef-Fx-Os9"/>
                                     </connections>
                                 </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXF-CY-UDu" userLabel="email button">
+                                    <rect key="frame" x="0.0" y="68.666666666666686" width="75" height="34.333333333333343"/>
+                                    <color key="tintColor" red="0.96862745100000003" green="0.25490196079999999" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                    <connections>
+                                        <action selector="emailPressed:" destination="-1" eventType="touchUpInside" id="hQO-mV-Oo1"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" red="0.99607843139999996" green="0.78039215689999997" blue="0.70588235290000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <color key="tintColor" red="0.96862745100000003" green="0.25490196079999999" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </stackView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RX0-F2-tTx">
-                            <rect key="frame" x="0.0" y="89.666666666666686" width="361" height="34.333333333333343"/>
+                            <rect key="frame" x="0.0" y="123.99999999999999" width="361" height="34.333333333333329"/>
+                            <color key="backgroundColor" red="0.99607843139999996" green="0.78039215689999997" blue="0.70588235290000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="tintColor" red="0.96862745100000003" green="0.25490196079999999" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Edit contact"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Bd-HT-av2">
+                            <rect key="frame" x="0.0" y="179.33333333333337" width="361" height="34.333333333333343"/>
                             <color key="backgroundColor" red="0.99607843139999996" green="0.78039215689999997" blue="0.70588235290000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <color key="tintColor" red="0.96862745100000003" green="0.25490196079999999" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" title="Undo delete"/>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iQ8-Nu-ki4">
-                            <rect key="frame" x="0.0" y="145" width="361" height="34.333333333333343"/>
+                            <rect key="frame" x="0.0" y="234.66666666666663" width="361" height="34.333333333333314"/>
                             <color key="backgroundColor" red="0.99607843139999996" green="0.78039215689999997" blue="0.70588235290000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <color key="tintColor" red="0.96862745100000003" green="0.25490196079999999" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <state key="normal" title="Button"/>
