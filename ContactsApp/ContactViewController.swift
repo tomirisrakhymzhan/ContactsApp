@@ -18,7 +18,7 @@ class ContactViewController: UIViewController {
     
     var nameLabelText = ""
     var surnameLabelText = ""
-    var phoneNumber = ""
+    var phoneNumberText = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +26,7 @@ class ContactViewController: UIViewController {
         // Do any additional setup after loading the view.
         nameSurnameLabel.text = "\(nameLabelText) \(surnameLabelText)"
         AALabel.text = "\(String(describing: nameLabelText[nameLabelText.startIndex]))\(String(describing: surnameLabelText[surnameLabelText.startIndex]))"
-        phoneNumberBtn.setTitle(phoneNumber, for: .normal)
+        phoneNumberBtn.setTitle(phoneNumberText, for: .normal)
     }
 
 

@@ -13,16 +13,21 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var segmentControl: UISegmentedControl!
     
-    
     @IBAction func segmentControlValueChanged(_ sender: UISegmentedControl) {
+        updateContacts()
         tableView.reloadData()
     }
+    
     var contactsDataSource : [Contact] = [] {
         didSet {
             tableView.reloadData()
         }
     }
-    
+    var firstLetterSection : [Character] = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -43,14 +48,11 @@ class ViewController: UIViewController {
     }
     @objc func updateContacts(){
         tableView.refreshControl?.endRefreshing()
-
-        //retrieve from userdefaults contacts
-        var contactsRaw = getAllContacts()
-        
-        contactsDataSource = contactsRaw
+        contactsDataSource = ViewController.getAllContacts()
+        initSectionTitles()
     }
 
-    func getAllContacts() -> [Contact]{
+    static func getAllContacts() -> [Contact]{
         var allContacts : [Contact] = []
         let userDefaults = UserDefaults.standard
         if let data = userDefaults.object(forKey: Contact.keyString) as? Data {
@@ -66,7 +68,7 @@ class ViewController: UIViewController {
     }
     
     func saveContact(contact: Contact){
-        var allContacts = getAllContacts()
+        var allContacts = ViewController.getAllContacts()
         allContacts.append(contact)
         do {
             let encoder = JSONEncoder()
@@ -79,6 +81,12 @@ class ViewController: UIViewController {
         }
     }
     
+    func initSectionTitles() {
+        // Populate firstLetterSection array with unique first letters from names or surnames
+        let allFirstLetters = contactsDataSource.flatMap { [$0.name.first, $0.surname.first] }
+        let uniqueFirstLetters = Set(allFirstLetters.compactMap { $0 })
+        firstLetterSection = uniqueFirstLetters.sorted()
+    }
     @IBAction func addContactPressed(_ sender: UIBarButtonItem) {
         let alert = UIAlertController(title: "Create New Contact", message: nil, preferredStyle: .alert)
         alert.addTextField{ (textField) in
@@ -112,26 +120,51 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return firstLetterSection.count
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return contactsDataSource.count
+        let firstLetter = firstLetterSection[section]
+        let contactsListForSection : [Contact]
+        switch segmentControl.selectedSegmentIndex {
+        case 0:
+            contactsListForSection = contactsDataSource.filter{$0.name.first == firstLetter}
+            return contactsListForSection.count
+        case 1:
+            contactsListForSection = contactsDataSource.filter{$0.surname.first == firstLetter}
+            return contactsListForSection.count
+        default:
+            print("segment control index out of range")
+            return 0
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return String(firstLetterSection[section])
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ContactTableViewCell.identifier, for: indexPath) as! ContactTableViewCell
+        let firstLetter = firstLetterSection[indexPath.section]
+        let contactsListForSection : [Contact]
+        let contact : Contact
         switch segmentControl.selectedSegmentIndex{
         case 0:
             //by name
-            cell.label.text = contactsDataSource[indexPath.row].name + " " + contactsDataSource[indexPath.row].surname
+            contactsListForSection = contactsDataSource.filter {$0.name.first == firstLetter}
+            contact = contactsListForSection[indexPath.row]
+            cell.label.text = contact.name + " " + contact.surname
         case 1:
             //by surname
-            cell.label.text = contactsDataSource[indexPath.row].surname + " " + contactsDataSource[indexPath.row].name
+            contactsListForSection = contactsDataSource.filter {$0.surname.first == firstLetter}
+            contact = contactsListForSection[indexPath.row]
+            cell.label.text = contact.surname + " " + contact.name
         default:
             print("segment control index out of range")
         }
         return cell
     }
-    
-    
 }
 
 extension ViewController: UITableViewDelegate{
@@ -139,14 +172,27 @@ extension ViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let contactVC = ContactViewController(nibName: "ContactViewController", bundle: nil)
-        contactVC.nameLabelText = contactsDataSource[indexPath.row].name
-        print(contactVC.nameLabelText)
-        contactVC.surnameLabelText = contactsDataSource[indexPath.row].surname
-        print(contactVC.surnameLabelText)
-
-        contactVC.phoneNumber = contactsDataSource[indexPath.row].phoneNumber
-        print(contactVC.phoneNumber)
-
+        let firstLetter = firstLetterSection[indexPath.section]
+        let contactsListForSection : [Contact]
+        let contact : Contact
+        switch segmentControl.selectedSegmentIndex{
+        case 0:
+            //by name
+            contactsListForSection = contactsDataSource.filter {$0.name.first == firstLetter}
+            contact = contactsListForSection[indexPath.row]
+            contactVC.nameLabelText = contact.name
+            contactVC.surnameLabelText = contact.surname
+            contactVC.phoneNumberText = contact.phoneNumber
+        case 1:
+            //by surname
+            contactsListForSection = contactsDataSource.filter {$0.surname.first == firstLetter}
+            contact = contactsListForSection[indexPath.row]
+            contactVC.nameLabelText = contact.name
+            contactVC.surnameLabelText = contact.surname
+            contactVC.phoneNumberText = contact.phoneNumber
+        default:
+            print("segment control index out of range")
+        }
         navigationController?.pushViewController(contactVC, animated: true)
     }
     
